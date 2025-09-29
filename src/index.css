@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;        /* full viewport width */
+  height: 100vh;       /* full viewport height */
+  overflow: hidden;    /* ❗ prevents scrolling */
+}

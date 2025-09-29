@@ -1,0 +1,39 @@
+.DrawerOverlay {
+  background-color: var(--black-a9);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.DrawerContent {
+  background-color: rgb(51, 51, 51);
+  color: white;
+  border-radius: 12px 12px 0 0;       /* rounded top corners only */
+  box-shadow: var(--shadow-6);
+  position: fixed;
+  bottom: 0;                          /* stick to the bottom */
+  left: 0;
+  width: 100%;                        /* full width or change as needed */
+  height:60vh;
+  padding: 25px;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  /* optional slide-up effect */
+  transform: translateY(100%);
+  animation: drawerSlideUp 200ms ease-out forwards;
+}
+
+@keyframes drawerSlideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.DrawerContent:focus {
+  outline: none;
+}
+
+.DrawerTitle {
+  margin: 0;
+  font-weight: 500;
+  color: var(--mauve-12);
+  font-size: 17px;
+}

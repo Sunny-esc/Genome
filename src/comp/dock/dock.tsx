@@ -8,7 +8,7 @@ import softwarre from './dockicons/software-center.svg'
 import drive from './dockicons/chrome-aghbiahbpaijignceidepookljebhfak-Default.svg'
 import { useState } from 'react'
 import { tr } from 'date-fns/locale'
-import Displaychrome from '../../app/chrome.jsx'
+import BrowserApp from '../../app/chrome.tsx'
 import Draw from '../menu/drawer'
 export default function Dock(){
     const [openmenu,setmenu]=useState(false);
@@ -29,7 +29,8 @@ export default function Dock(){
 
         </div>
         </div>
-        <Displaychrome open={chrome} onOpenChange={setchrome}/>
+        { chrome &&
+        <BrowserApp onClose={()=>setchrome(false)} />}
          <Draw open={openmenu} onOpenChange={setmenu} />
         </>
     )

@@ -9,12 +9,16 @@ import {
 } from "lucide-react";
 
 const HOME_URL = "https://wikipedia.com";
+type Browserprops={
+  onClose:()=>void;
 
-export default function BrowserApp({ onClose }  ) {
+};
+
+export default function BrowserApp({onClose}:Browserprops  ) {
   const [isOpen, setIsOpen] = useState(true);
   const [url, setUrl] = useState(HOME_URL);
   const [displayUrl, setDisplayUrl] = useState(HOME_URL);
-  const iframeRef = useRef(null);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const nodeRef = useRef(null);
 
   useEffect(() => {
@@ -40,7 +44,7 @@ export default function BrowserApp({ onClose }  ) {
     }
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e:React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       let formattedUrl = displayUrl.trim();
       if (!/^https?:\/\//i.test(formattedUrl)) {

@@ -2,14 +2,14 @@ import * as Dialog from "@radix-ui/react-dialog"
 import "./notification.css"
 import { useState ,useEffect} from "react"
 import { Calendar } from "@/components/ui/calendar"
-import Time from '../function/DateTime.jsx'
+import Time from '../function/DateTime.js'
 
 
 export default function Notification() {
   const [date, setDate] = useState<Date | undefined>(new Date())
   const [open, setOpen] = useState(false)
 
-  const openModal = () => setOpen(true)
+  //const openModal = () => setOpen(true)
   const closeModal = () => setOpen(false)
 
      const [current, setDate2] = useState(Time());

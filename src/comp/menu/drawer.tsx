@@ -39,7 +39,7 @@ export default function Draw({ open, onOpenChange }: DrawProps) {
          <img src={vs} alt="" />
          <img src={cal} alt="" />
          <img src={drive} alt="" />
-         <img src={menu} alt=""   onClick={() => setmenu(true)} />
+         <img src={menu} alt=""   onClick={() => onOpenChange(true)} />
 
         </div>
           </DrawerDescription>

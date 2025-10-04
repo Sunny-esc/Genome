@@ -7,7 +7,6 @@ import cal from './dockicons/chrome-calculator.svg'
 import softwarre from './dockicons/software-center.svg'
 import drive from './dockicons/chrome-aghbiahbpaijignceidepookljebhfak-Default.svg'
 import { useState } from 'react'
-import { tr } from 'date-fns/locale'
 import BrowserApp from '../../app/chrome.tsx'
 import Draw from '../menu/drawer'
 export default function Dock(){

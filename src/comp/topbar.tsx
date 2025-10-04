@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import arch from './archlinux-logo-dark-90dpi.png';
 import Notification from './notification';
 import Control from './control/control';
 export default function Topbar() {
-  const [open, setOpen] = useState<boolean>(false);
   return (
     <>
       <div className="w-full h-[5%] z-50 backdrop-blur-sm flex justify-between border-2 items-center fixed text-white font-semibold">

@@ -8,7 +8,7 @@ import {
   Maximize2,
 } from "lucide-react";
 
-const HOME_URL = "https://google.com";
+const HOME_URL = "https://wikipedia.com";
 type Browserprops={
   onClose:()=>void;
 

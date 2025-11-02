@@ -1,4 +1,4 @@
-import Topbar from "@/comp/topbar"
+import Topbar from "@/comp/Topbar/topbar"
 import Main from "./main.page"
 import Dock from "@/comp/dock/dock"
 

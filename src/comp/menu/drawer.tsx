@@ -28,8 +28,8 @@ export default function Draw({ open, onOpenChange }: DrawProps) {
     <Drawer open={open} onOpenChange={onOpenChange}>
       <DrawerContent className="DrawerContent">
         <DrawerHeader>
-          <DrawerTitle className="DrawerTitle">Are you absolutely sure?</DrawerTitle>
-          <DrawerDescription>This action cannot be undone.
+          <DrawerTitle className="DrawerTitle">Menu</DrawerTitle>
+          <DrawerDescription>icons
 
         <div className="  flex justify-center">
         <img src={app} alt="" />

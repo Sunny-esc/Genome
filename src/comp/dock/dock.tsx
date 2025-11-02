@@ -7,19 +7,21 @@ import cal from './dockicons/chrome-calculator.svg'
 import softwarre from './dockicons/software-center.svg'
 import drive from './dockicons/chrome-aghbiahbpaijignceidepookljebhfak-Default.svg'
 import { useState } from 'react'
-import BrowserApp from '../../app/chrome.tsx'
+import BrowserApp from '../../app/chrome'
 import Draw from '../menu/drawer'
+import Terminal from '../../app/terminal'
 export default function Dock(){
     const [openmenu,setmenu]=useState(false);
-    const[chrome ,setchrome]=useState(false)
+    const[chrome ,setchrome]=useState(false);
+    const[term ,setterm]=useState(false)
     return(
         <>
         <div className=' w-full flex justify-center fixed bottom-0'>
 
-        <div className="w-[40%] h-[20%] rounded-2xl bg-black  flex justify-center">
+        <div className="w-[40%] h-[20%] rounded-2xl backdrop-blur-3xl  flex justify-center">
         <img src={app} alt="" />
          <img src={firfox} alt="" onClick={()=> setchrome(true)}/>
-         <img src={bash} alt="" />
+         <img src={bash} alt="" onClick={()=>setterm(true)}/>
          <img src={softwarre} alt="" />
          <img src={vs} alt="" />
          <img src={cal} alt="" />
@@ -31,6 +33,7 @@ export default function Dock(){
         { chrome &&
         <BrowserApp onClose={()=>setchrome(false)} />}
          <Draw open={openmenu} onOpenChange={setmenu} />
+         { term && <Terminal onClose={()=>setterm(false)} /> }
         </>
     )
 

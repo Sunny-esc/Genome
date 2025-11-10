@@ -1,4 +1,4 @@
-import arch_linux from '../../assets/arch_linux.png'
+import arch_linux from '../../../public/assets/arch_linux.png'
 import Notification from '../Date&Notification/notification';
 import Control from '../control/control';
 export default function Topbar() {

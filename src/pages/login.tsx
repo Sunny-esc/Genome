@@ -11,6 +11,10 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { motion } from "framer-motion";
+import { pageTransition } from "@/animations/page"
+import {CircleUser} from "lucide-react"
+
 export default function LoginPage() {
   const navigate = useNavigate()
 
@@ -21,17 +25,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
+     <motion.div {...pageTransition} >
 
-    <Card className="w-full max-w-sm bg-gray-800">
+    <div className="flex items-center justify-center h-screen bg-gray-950 text-white">
+
+    <Card className="w-full max-w-sm bg-gradient-to-b from-gray-900 to-black border-2 border-blue-900">
       <CardHeader>
-        <CardTitle className="text-xl text-gray-50">Login to your account</CardTitle>
+        <CardTitle className="text-xl text-gray-50 flex gap-6"> <CircleUser />Login to your account</CardTitle>
         <CardDescription className="text-gray-200">
           Enter your email below to login to your account
         </CardDescription>
-        <CardAction>
-          <Button variant="link">Sign Up</Button>
-        </CardAction>
+       
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit}>
@@ -43,7 +47,7 @@ export default function LoginPage() {
                 type="email"
                 placeholder="m@example.com"
                 required
-              />
+                />
             </div>
             <div className="grid gap-2">
               <div className="flex-col items-center">
@@ -59,11 +63,10 @@ export default function LoginPage() {
         <Button onClick={handleSubmit} type="submit" className="w-full bg-blue-800">
           Login
         </Button>
-        <Button variant="outline" className="w-full">
-          Login with Google
-        </Button>
+      
       </CardFooter>
     </Card>
     </div>
+  </motion.div>
   )
 }

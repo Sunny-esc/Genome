@@ -1,4 +1,4 @@
-import bg from "../assets/20250923-BearLodge_EN-IN2528556725_UHD.jpg";
+import bg from "../../public/assets/20250923-BearLodge_EN-IN2528556725_UHD.jpg";
 import {
   ContextMenu,
   ContextMenuContent,

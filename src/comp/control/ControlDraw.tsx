@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { useBattery } from 'react-use';
 
-import batteryimg from "../../assets/battery.svg";
+import batteryimg from "../../../public/assets/battery.svg";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
@@ -51,7 +51,7 @@ export default function Contorl() {
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="DialogOverlay" />
-          <Dialog.Content className="DialogContent border flex-col gap-4 w-[25%] h-[65%] fixed top-[40%] left-[87%] p-2 rounded-2xl text-white ">
+          <Dialog.Content className="DialogContent border flex-col gap-4 w-[25%] h-[50%] fixed top-[30  %] left-[87%] p-2 rounded-2xl text-white ">
          
          {/**/}
             <div className="flex justify-between">
@@ -138,17 +138,7 @@ export default function Contorl() {
             >
               <BatteryCharging className="w-6 h-6" />
             </div>
-              <div
-              onClick={() => setWifiEnabled(!wifiEnabled)}
-              className={`${wifiEnabled ? "bg-blue-600" : "bg-gray-700"} 
-                         text-white rounded-lg p-4
-                         flex flex-col items-center justify-center gap-2
-                         transition-all hover:opacity-90
-                         border ${wifiEnabled ? "border-blue-500" : "border-gray-600"}`}
-            >
-              <Wifi className="w-6 h-6" />
-            </div>
-
+             
             <div
               className="bg-gray-700 text-white rounded-lg p-4
                          flex flex-col items-center justify-center gap-2

@@ -7,7 +7,8 @@ import {
   CircleMinus,
   Maximize2,
 } from "lucide-react";
-
+import { motion } from "framer-motion";
+import { windowPop } from "@/animations/windowPop";
 const HOME_URL = "https://wikipedia.com";
 type Browserprops={
   onClose:()=>void;
@@ -55,14 +56,15 @@ export default function BrowserApp({onClose}:Browserprops  ) {
   };
 
   // auto reopen after 3s when closed
-  useEffect(() => { 
+  useEffect(() => {
     if (!isOpen) {
       const timer = setTimeout(() => {
         setIsOpen(true);
       }, 3000);
-
       return () => clearTimeout(timer);
     }
+    // Only set up timer when closing, not when opening
+    return undefined;
   }, [isOpen]);
 
   // if closed, return nothing
@@ -70,7 +72,7 @@ export default function BrowserApp({onClose}:Browserprops  ) {
 
   return (
     <Draggable nodeRef={nodeRef}>
-      <div
+      <motion.div {...windowPop}
         ref={nodeRef}
         className="w-[50%] fixed top-20 rounded-2xl p-2 bg-amber-50 h-[30rem] resize"
       >
@@ -85,7 +87,7 @@ export default function BrowserApp({onClose}:Browserprops  ) {
             value={displayUrl}
             onChange={(e) => setDisplayUrl(e.target.value)}
             onKeyDown={handleKeyDown}
-            type="url"
+            type="text"
             className="border-2 border-black"
           />
           <div className="flex w-full justify-end space-x-3">
@@ -93,8 +95,8 @@ export default function BrowserApp({onClose}:Browserprops  ) {
               className="bg-red-600 rounded-full cursor-pointer"
               onClick={onClose}
             />
-            <CircleMinus className="bg-yellow-400 rounded-full cursor-pointer" />
-            <Maximize2 className="bg-green-400 rounded-full cursor-pointer" />
+            <CircleMinus className="bg-yellow-400 rounded-full" />
+            <Maximize2 className="bg-green-400 rounded-full" />
           </div>
         </div>
         <iframe
@@ -109,7 +111,7 @@ export default function BrowserApp({onClose}:Browserprops  ) {
             borderRadius: "20px",
           }}
         />
-      </div>
+      </motion.div>
     </Draggable>
   );
 }
